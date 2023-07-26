@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <script type="text/javascript" src="Panel.js"></script>
+    <script type="text/javascript" src="Functions.js"></script>
+    <link rel="stylesheet" href="Style.css">
+    <title>Рецептики</title>
+    <center>
+        <h1>Рецепты</h1>
+    </center>
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div id="list_text"></div>
+    </div>
+    <button class="openbtn" onclick="openNav()">&#9776; Список рецептов </button>
+    <div id="recipe_text"></div>
+</body>
+<img name="below_pic" src="images/meal.png">
+
+</html>
+
+
+<script>
+
+    ; (async function () {
+        let response = await fetch('Recipes.txt');
+        let whole_text = await response.text(); // read response body as text
+        document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
+        var adress = decodeURI(window.location.href);
+        if (adress.search("#") != -1) {
+            var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
+            var next_recipe = FindWord(whole_text, recipe_name);
+            document.getElementById("recipe_text").innerHTML=whole_text.substring(whole_text.lastIndexOf(recipe_name), whole_text.lastIndexOf(next_recipe));
+        }
+    })()
+
+
+
+
+
+    /*
+    document.getElementById("text").innerHTML = NewLine(contents);
+    var adress = decodeURI(window.location.href);
+    if (adress.search("#") != -1) {
+        var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
+        fetch('Recipes.txt')
+            .then(response => response.text())
+            .then(text => document.getElementById("recipe_text").innerHTML = FindWord(text.substring(text.search("Основная таблица") + "Основная таблица".length, text.search("Попробовать")), recipe_name))
+    }*/
+</script>

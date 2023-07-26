@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="Style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Рецептики</title>
+    <center>
+        <h1>Рецепты</h1>
+    </center>
+</head>
+
+<body>
+    <div class="text">
+        <h1 style="color: rgb(255, 256, 189)">Список рецептов</h1>
+        <div id="rec_text"></div>
+    </div>
+</body>
+<img name="below_pic" src="images/meal.png">
+
+<script>
+    function read_file() {
+
+    }
+</script>
+<script>
+    function NewLine(text) {
+        var list = '<ul>';
+            word=0;
+        for (let i=6; i < text.length-1; i++) {
+            if (text[i] == '\n') {
+                list += '<li>' + text.substring(word, i) + '</li>'
+                word = i;
+            }
+        }
+        return list;
+    }
+    fetch('Recipes.txt')
+        .then(response => response.text())
+        .then(text => document.getElementById("rec_text").innerHTML = NewLine(text.substring(text.search("Основная таблица")+"Основная таблица".length,text.search("Попробовать"))))
+</script>
+
+</html>
