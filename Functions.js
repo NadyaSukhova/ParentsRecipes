@@ -11,12 +11,26 @@ function FindWord(text, search_word) {
     }
     return list[list.indexOf(search_word) + 1];
 }
+
+function LoadRecipe(recipe_name) {
+    var adress = decodeURI(window.location.href);
+    if (adress.search("#") != -1) {
+        adress = adress.substring(0, adress.search("#") + 1) + recipe_name;
+    }
+    else {
+        adress +=
+         "#" + recipe_name;
+    }
+    window.location = adress;
+    location.reload();
+}
+
 function NewLine(text) {
     var list = "";
     word = 0;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
-            list += '<a onclick=\"closeNav(); NewRecipe();\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
+            list += '<a onclick=\" LoadRecipe(\'' + text.substring(word+1, i - 1) + '\')\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
             word = i;
 
         }

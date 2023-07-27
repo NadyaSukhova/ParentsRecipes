@@ -25,8 +25,11 @@
 
 
 <script>
-    function NewRecipe() {
-        whole_text = WholeText();
+
+    ; (async function () {
+        let response = await fetch('Recipes.txt');
+        let whole_text = await response.text();
+        document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
         var adress = decodeURI(window.location.href);
         if (adress.search("#") != -1) {
             var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
@@ -34,17 +37,9 @@
             document.getElementById("recipe_text").innerHTML = '<h2>' + recipe_name + '</h2>';
             document.getElementById("recipe_text").innerHTML += whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe));
         }
-    }
-    ; (async function WholeText() {
-        let response = await fetch('Recipes.txt');
-        let whole_text = await response.text();
-        document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
-        return whole_text;
     })()
 
-
-
-
+    
 
 
     /*
