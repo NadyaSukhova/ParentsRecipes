@@ -22,10 +22,16 @@ img[name="below_pic"] {
     bottom: 0;
     right: 0;
 }
+
+div{
+  position:relative;
+}
+
 li {
     font-size: x-large;
     color: rgb(65, 22, 22); 
 }
+
 
 /* Меню боковой панели */
 .sidepanel {
@@ -53,7 +59,7 @@ li {
   
   /* При наведении курсора мыши на навигационные ссылки измените их цвет */
   .sidepanel a:hover {
-    color: rgb(255, 256, 189);
+    color: rgb(255, 256, 189); 
     background-color: #864848;
   }
   
