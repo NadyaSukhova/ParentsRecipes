@@ -1,30 +1,31 @@
 @font-face {
-    font-family: Nevduplenysh;
-    src: url(fonts/Nevduplenysh-Regular.otf);
+  font-family: Nevduplenysh;
+  src: url(fonts/Nevduplenysh-Regular.otf);
 }
 
 html {
-    background-color: rgb(229, 186, 153);
+  background-color: rgb(229, 186, 153);
 }
+
 center {
-    background-color: rgb(255, 256, 189);
-    font-family: Nevduplenysh;
-    font-size: xx-large;
-    display: block;
-    width: 100%;
-    line-height: 220%;
-    color: rgb(65, 22, 22)
+  background-color: rgb(255, 256, 189);
+  font-family: Nevduplenysh;
+  font-size: xx-large;
+  display: block;
+  width: 100%;
+  line-height: 220%;
+  color: rgb(65, 22, 22)
 }
 
 img[name="below_pic"] {
-    width: 50pc;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+  width: 50pc;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
-div{
-  position:relative;
+div {
+  position: relative;
 }
 
 .RecipeText {
@@ -34,54 +35,36 @@ div{
   padding-left: 10px;
 }
 
-li {
-    font-size: x-large;
-    color: rgb(65, 22, 22); 
-}
-
-
-/* Меню боковой панели */
-.sidepanel {
-    height: 100%; /* Укажите высоту */
-    width: 0; /* 0 ширина-измените это с помощью JavaScript */
-    position: fixed; /* Оставаться на месте */
-    z-index: 1; /* Оставайтесь на вершине */
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 256, 189); /* Черный */
-    overflow-x: hidden; /* Отключить горизонтальную прокрутку */
-    transition: 0.5s; /* 0.5 секунды эффект перехода для скольжения в боковой панели */
-  }
-  
-  /* Боковая панель ссылок */
-  .sidepanel a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: rgb(112, 61, 61);
-    display: block;
-    background-color: rgb(255, 256, 189);
-    transition: 0.3s;
-  }
-  
-  /* При наведении курсора мыши на навигационные ссылки измените их цвет */
-  .sidepanel a:hover {
-    color: rgb(255, 256, 189); 
-    background-color: #864848;
-  }
-  
-
-  
-  /* Стиль кнопка, которая используется для открытия боковой панели */
-  .openbtn {
+button{
     font-size: 20px;
     cursor: pointer;
     background-color: rgb(65, 22, 22);
     color: rgb(255, 256, 189);
     padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: #864848;
-  }
+}
+
+
+.dropdown-content {
+  display: none;
+  width: fit-content;
+  background: bisque;
+  list-style: none;
+  max-height: 400px;
+  overflow: hidden auto;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-content a {
+  font-size: x-large;
+  text-decoration: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  display: block;
+  color:rgb(65, 22, 22);
+}

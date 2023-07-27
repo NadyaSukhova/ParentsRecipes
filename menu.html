@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <img name="below_pic" src="images/meal.png">
+
 <head>
     <script type="text/javascript" src="Panel.js"></script>
     <script type="text/javascript" src="Functions.js"></script>
@@ -12,19 +13,21 @@
 </head>
 
 <body>
-    <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div id="list_text"></div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">&#9776; Список рецептов</button>
+        <div id="list_text" class="dropdown-content"></div>
     </div>
-    <button class="openbtn" onclick="openNav()">&#9776; Список рецептов </button>
     <div id="recipe_text"></div>
 </body>
-
 
 </html>
 
 
 <script>
+
+    function myFunction() {
+        document.getElementById("list_text").classList.toggle("show");
+    }
 
     ; (async function () {
         let response = await fetch('Recipes.txt');
@@ -36,23 +39,10 @@
             var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
             var next_recipe = FindWord(whole_text, recipe_name);
             document.getElementById("recipe_text").innerHTML = '<h2 style=\"text-align: left;color:rgb(65, 22, 22);\">' + recipe_name + '</h2>';
-            document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" + 
-            whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
-            "</div>";
-            document.getElementById("recipe_pic").innerHTML="<img scr=\'https://img1.russianfood.com/dycontent/images_upl/60/big_59791.jpg\''>";
+            document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" +
+                whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
+                "</div>";
+            document.getElementById("recipe_pic").innerHTML = "<img scr=\'https://img1.russianfood.com/dycontent/images_upl/60/big_59791.jpg\''>";
         }
     })()
-
-    
-
-
-    /*
-    document.getElementById("text").innerHTML = NewLine(contents);
-    var adress = decodeURI(window.location.href);
-    if (adress.search("#") != -1) {
-        var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
-        fetch('Recipes.txt')
-            .then(response => response.text())
-            .then(text => document.getElementById("recipe_text").innerHTML = FindWord(text.substring(text.search("Основная таблица") + "Основная таблица".length, text.search("Попробовать")), recipe_name))
-    }*/
 </script>
