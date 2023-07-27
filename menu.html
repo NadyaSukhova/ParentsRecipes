@@ -36,7 +36,10 @@
             var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
             var next_recipe = FindWord(whole_text, recipe_name);
             document.getElementById("recipe_text").innerHTML = '<h2 style=\"padding-right: 10%; text-align: right;color:rgb(65, 22, 22);\">' + recipe_name + '</h2>';
-            document.getElementById("recipe_text").innerHTML += whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>');;
+            document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" + 
+            whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
+            "</div>";
+            document.getElementById("recipe_pic").innerHTML="<img scr=\'https://img1.russianfood.com/dycontent/images_upl/60/big_59791.jpg\''>";
         }
     })()
 
