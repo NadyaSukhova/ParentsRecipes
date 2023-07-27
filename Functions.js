@@ -16,7 +16,7 @@ function NewLine(text) {
     word = 0;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
-            list += '<a onclick=\"closeNav()\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
+            list += '<a onclick=\"closeNav(); NewRecipe();\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
             word = i;
 
         }
