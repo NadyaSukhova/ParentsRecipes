@@ -31,7 +31,7 @@
     }
 
     ; (async function () {
-        let response = await fetch('Recipes.txt');
+        let response = await fetch('.gitignore\\Recipes.txt');
         let whole_text = await response.text();
         document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
         var adress = decodeURI(window.location.href);
