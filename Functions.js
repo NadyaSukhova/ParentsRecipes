@@ -4,11 +4,12 @@ function FindWord(text, search_word) {
     word = 1;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
-            list.push(text.substring(word + 1, i - 1))
+            list.push(text.substring(word + 1, i))
             word = i;
 
         }
     }
+    console.log(list);
     return list[list.indexOf(search_word) + 1];
 }
 
@@ -30,8 +31,9 @@ function NewLine(text) {
     word = 2;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
-            list += '<a onclick=\" LoadRecipe(\'' + text.substring(word-1, i) + '\')\" href=\"#' + text.substring(word, i) + '\">' + text.substring(word, i) + '</a>'
-            word = i;
+            recipe=text.substring(word-1, i)
+            list += '<a onclick=\" LoadRecipe(\'' + recipe + '\')\" href=\"#' + recipe + '\">' + recipe + '</a>'
+            word = i + 2;
         }
     }
     return list;

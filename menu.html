@@ -38,7 +38,7 @@
             var next_recipe = FindWord(whole_text, recipe_name);
             document.getElementById("recipe_text").innerHTML = '<h2 style=\"text-align: left;color:rgb(65, 22, 22);\">' + recipe_name + '</h2>';
             document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" +
-                whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
+                whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length+1, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
                 "</div>";
         }
     })()
