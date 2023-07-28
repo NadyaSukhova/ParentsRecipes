@@ -9,7 +9,6 @@ function FindWord(text, search_word) {
 
         }
     }
-    console.log(list);
     return list[list.indexOf(search_word) + 1];
 }
 

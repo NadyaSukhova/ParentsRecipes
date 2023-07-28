@@ -24,6 +24,13 @@ img[name="below_pic"] {
   right: 0;
 }
 
+img[name="meal_pic"] {
+  width: 30pc;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 div {
   position: relative;
 }

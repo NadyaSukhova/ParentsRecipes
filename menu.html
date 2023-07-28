@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <img name="below_pic" src="images/meal.png">
+<div id="meal"></div>
+
 
 <head>
     <script type="text/javascript" src="Functions.js"></script>
@@ -40,6 +42,7 @@
             document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" +
                 whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length+1, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
                 "</div>";
+            document.getElementById("meal").innerHTML = "<img name =\"meal_pic\" src=\"images/" + recipe_name.split(' ').join('_') + ".png\">"
         }
     })()
 
