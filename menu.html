@@ -3,7 +3,6 @@
 <img name="below_pic" src="images/meal.png">
 
 <head>
-    <script type="text/javascript" src="Panel.js"></script>
     <script type="text/javascript" src="Functions.js"></script>
     <link rel="stylesheet" href="Style.css">
     <title>Рецептики</title>
@@ -32,7 +31,6 @@
     ; (async function () {
         let response = await fetch('Recipes.txt');
         let whole_text = await response.text();
-        console.log(whole_text);
         document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
         var adress = decodeURI(window.location.href);
         if (adress.search("#") != -1) {
@@ -42,7 +40,6 @@
             document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" +
                 whole_text.substring(whole_text.lastIndexOf(recipe_name) + recipe_name.length, whole_text.lastIndexOf(next_recipe)).split('\n').join('<br>') +
                 "</div>";
-            document.getElementById("recipe_pic").innerHTML = "<img scr=\'https://img1.russianfood.com/dycontent/images_upl/60/big_59791.jpg\''>";
         }
     })()
 </script>

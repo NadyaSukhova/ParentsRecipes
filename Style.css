@@ -68,3 +68,12 @@ button{
   display: block;
   color:rgb(65, 22, 22);
 }
+*::-webkit-scrollbar {
+  background-color: rgb(255, 256, 189);
+  width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color:rgb(65, 22, 22);
+  border-radius: 20px;
+}

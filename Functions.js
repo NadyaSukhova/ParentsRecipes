@@ -27,7 +27,7 @@ function LoadRecipe(recipe_name) {
 
 function NewLine(text) {
     var list = "";
-    word = 0;
+    word = 1;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
             list += '<a onclick=\" LoadRecipe(\'' + text.substring(word+1, i - 1) + '\')\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
