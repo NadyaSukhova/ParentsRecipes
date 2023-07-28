@@ -27,12 +27,11 @@ function LoadRecipe(recipe_name) {
 
 function NewLine(text) {
     var list = "";
-    word = 1;
+    word = 2;
     for (let i = 5; i < text.length - 1; i++) {
         if (text[i] == '\n') {
-            list += '<a onclick=\" LoadRecipe(\'' + text.substring(word, i) + '\')\" href=\"#' + text.substring(word, i - 1) + '\">' + text.substring(word, i) + '</a>'
+            list += '<a onclick=\" LoadRecipe(\'' + text.substring(word-1, i) + '\')\" href=\"#' + text.substring(word, i) + '\">' + text.substring(word, i) + '</a>'
             word = i;
-
         }
     }
     return list;
