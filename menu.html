@@ -34,7 +34,7 @@
         document.getElementById("list_text").innerHTML = NewLine(GetList(whole_text));
         var adress = decodeURI(window.location.href);
         if (adress.search("#") != -1) {
-            var recipe_name = adress.substring(adress.search("#") + 1, adress.length);
+            var recipe_name = adress.substring(adress.search("#") + 1, adress.length + 1);
             var next_recipe = FindWord(whole_text, recipe_name);
             document.getElementById("recipe_text").innerHTML = '<h2 style=\"text-align: left;color:rgb(65, 22, 22);\">' + recipe_name + '</h2>';
             document.getElementById("recipe_text").innerHTML += "<div class=\'RecipeText\'>" +
