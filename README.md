@@ -1,1 +1,1 @@
-# [ParentsRecipes.io](https://nadyasukhova.github.io/ParentsRecipes/menu)
+# [page with recipes](https://nadyasukhova.github.io/ParentsRecipes/menu)
